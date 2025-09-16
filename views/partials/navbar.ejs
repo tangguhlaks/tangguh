@@ -2,7 +2,7 @@
         <div class="container-fluid padding-side">
             <a class="navbar-brand" href="/">
                 <p class="letter-space text-primary fw-semibold fs-3" style="margin-top: 25px;">
-                    TL
+                    Tangguh Laksana
                 </p>
             </a>
 
@@ -20,24 +20,20 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav text-center align-items-center justify-content-end flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link active pe-lg-5" aria-current="page" href="/">Home</a>
+                            <a class="nav-link pe-lg-5 <%= currentPath === '/' ? 'active' : '' %>" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pe-lg-5" href="about.html">About</a>
+                            <a class="nav-link pe-lg-5 <%= currentPath === '/about' ? 'active' : '' %>" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pe-lg-5" href="portfolio.html">Portfolio</a>
+                            <a class="nav-link pe-lg-5 <%= currentPath === '/portfolio' ? 'active' : '' %>" href="/portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pe-lg-5" href="reviews.html">Experiences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pe-lg-5" href="contact.html">Contact Me</a>
+                            <a class="nav-link pe-lg-5 <%= currentPath === '/contact' ? 'active' : '' %>" href="/contact">Contact Me</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-bold border-bottom border-2 border-primary" href="#">Let’s talk</a>
                         </li>
-
                     </ul>
                 </div>
             </div>

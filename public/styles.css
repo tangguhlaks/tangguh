@@ -458,3 +458,18 @@ button.filter-button:hover {
   background-color: var(--primary-color);
   color: var(--body-text-color);
 }
+
+
+/* ABOUT */
+
+#about-tabs .btn {
+  border: 1px solid #66FD0F;
+  color: #66FD0F;
+  background: transparent;
+}
+
+
+#about-tabs .btn.active {
+  background: #66FD0F !important;
+  color: #000 !important;
+}
