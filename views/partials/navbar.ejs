@@ -2,7 +2,7 @@
         <div class="container-fluid padding-side">
             <a class="navbar-brand" href="/">
                 <p class="letter-space text-primary fw-semibold fs-3" style="margin-top: 25px;">
-                    Tangguh Laksana
+                    Tangguh
                 </p>
             </a>
 
@@ -13,7 +13,7 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
                     <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
@@ -29,10 +29,10 @@
                             <a class="nav-link pe-lg-5 <%= currentPath === '/portfolio' ? 'active' : '' %>" href="/portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pe-lg-5 <%= currentPath === '/contact' ? 'active' : '' %>" href="/contact">Contact Me</a>
+                            <a class="nav-link pe-lg-5 <%= currentPath === '/blog' ? 'active' : '' %>" href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bold border-bottom border-2 border-primary" href="#">Let’s talk</a>
+                            <a class="nav-link fw-bold border-bottom border-2 border-primary <%= currentPath === '/contact' ? 'active' : '' %>" href="/contact">Let’s Collaborate!</a>
                         </li>
                     </ul>
                 </div>

@@ -468,8 +468,96 @@ button.filter-button:hover {
   background: transparent;
 }
 
-
 #about-tabs .btn.active {
   background: #66FD0F !important;
   color: #000 !important;
 }
+
+.card {
+    transition: all 0.3s ease;
+}
+.card:hover {
+    border-color: #66FD0F !important;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(102, 253, 15, 0.3);
+}
+
+/* CHAT AI /*
+<!-- paste ini di footer atau body -->
+<style>
+  /* Floating button */
+  .chat-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #66FD0F;
+    color: #000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 1050;
+  }
+
+  /* Modal */
+  .chat-modal {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 360px;
+    max-width: calc(100% - 40px);
+    height: 520px;
+    background: rgba(11,11,11,0.95);
+    border: 1px solid #66FD0F;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    z-index: 1050;
+    overflow: hidden;
+  }
+
+  .chat-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(102,253,15,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .chat-header h4 { margin:0; color:#66FD0F; font-size:16px; }
+  .chat-body {
+    flex:1;
+    padding: 12px;
+    overflow:auto;
+    gap:8px;
+    display:flex;
+    flex-direction:column;
+  }
+  .chat-input {
+    padding: 12px;
+    border-top: 1px solid rgba(102,253,15,0.08);
+    display:flex;
+    gap:8px;
+  }
+  .chat-input input {
+    flex:1;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding:8px 10px;
+    border-radius:6px;
+  }
+  .chat-msg {
+    max-width: 85%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    line-height:1.3;
+  }
+  .chat-msg.user { align-self:flex-end; background:#66FD0F; color:#000; }
+  .chat-msg.ai   { align-self:flex-start; background:rgba(255,255,255,0.04); color:#fff; border:1px solid rgba(255,255,255,0.03); }
+
+  /* Loading / typing cursor */
+  .typing { font-style: italic; opacity: 0.8; }

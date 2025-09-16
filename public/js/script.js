@@ -78,3 +78,42 @@
   });
 
 })(jQuery);
+
+const texts = [
+    ".NET Expertise",
+    "AI Enthusiast",
+    "Computer Vision Enthusiast"
+  ];
+
+  let index = 0;       // index teks
+  let charIndex = 0;   // index karakter
+  let currentText = "";
+  let isDeleting = false;
+  const typingSpeed = 120;   // kecepatan ngetik
+  const erasingSpeed = 80;   // kecepatan hapus
+  const delayBetween = 1500; // delay sebelum hapus
+
+  function typeEffect() {
+    const typingElement = document.getElementById("typing-text");
+
+    if (isDeleting) {
+      currentText = texts[index].substring(0, charIndex--);
+    } else {
+      currentText = texts[index].substring(0, charIndex++);
+    }
+
+    typingElement.textContent = currentText;
+
+    if (!isDeleting && charIndex === texts[index].length) {
+      // tunggu sebentar lalu hapus
+      setTimeout(() => isDeleting = true, delayBetween);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length; // lanjut ke teks berikutnya
+    }
+
+    setTimeout(typeEffect, isDeleting ? erasingSpeed : typingSpeed);
+  }
+
+  // mulai animasi setelah halaman load
+  document.addEventListener("DOMContentLoaded", typeEffect);
