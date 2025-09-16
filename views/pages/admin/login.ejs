@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Administrator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="/admin/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/admin/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/admin/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="/admin/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" type="text/css" href="/admin/css/style.css">
+</head>
+
+<body class="fix-menu">
+    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="login-card card-block auth-body mr-auto ml-auto">
+                        <form action="/login-admin" method="POST" class="md-float-material">
+                            <div class="auth-box">
+                                <div class="row m-b-20">
+                                    <div class="col-md-12">
+                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                    </div>
+                                </div>
+                                <hr/>
+
+                                <!-- Tampilkan error jika ada -->
+                                <% if (error) { %>
+                                    <div class="alert alert-danger"><%= error %></div>
+                                <% } %>
+
+                                <div class="input-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                    <span class="md-line"></span>
+                                </div>
+
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                    </div>
+                                </div>
+                                <hr/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="/admin/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/admin/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="/admin/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/admin/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="/admin/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="/admin/js/modernizr/css-scrollbars.js"></script>
+    <script type="text/javascript" src="/admin/js/common-pages.js"></script>
+</body>
+
+</html>

@@ -1,24 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const UserController = require("../controllers/UserController");
 
-router.get("/", (req, res) => {
-  res.render("pages/home",{ currentPath: req.path });
-});
-
-router.get("/about", (req, res) => {
-  res.render("pages/about",{ currentPath: req.path });
-});
-
-router.get("/portfolio", (req, res) => {
-  res.render("pages/portfolio",{ currentPath: req.path });
-});
-
-router.get("/contact", (req, res) => {
-  res.render("pages/contact",{ currentPath: req.path });
-});
-
-router.get("/blog", (req, res) => {
-  res.render("pages/blog",{ currentPath: req.path });
-});
+// Route user
+router.get("/", UserController.homePage);
+router.get("/about", UserController.aboutPage);
+router.get("/portfolio", UserController.portfolioPage);
+router.get("/contact", UserController.contactPage);
+router.get("/blog", UserController.blogPage);
 
 module.exports = router;
