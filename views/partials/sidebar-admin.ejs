@@ -3,38 +3,38 @@
     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Configuration</div>
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
-            <li class="active">
-                <a href="index.html">
+            <li class="<%= currentPath === '/configuration' ? 'active' : '' %>">
+                <a href="/configuration">
                     <span class="pcoded-micon"><i class="ti-settings"></i><b>D</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.dash.main">Global Configuration</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
-            <li>
-                <a href="form-elements-component.html">
-                    <span class="pcoded-micon"><i class="ti-folder"></i><b>FC</b></span>
+            <li class="<%= currentPath === '/skill' ? 'active' : '' %>">
+                <a href="/skill">
+                    <span class="pcoded-micon"><i class="ti-star"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Skill</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
-            <li>
-                <a href="form-elements-component.html">
-                    <span class="pcoded-micon"><i class="ti-folder"></i><b>FC</b></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Education</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li>
-            <li>
-                <a href="form-elements-component.html">
-                    <span class="pcoded-micon"><i class="ti-folder"></i><b>FC</b></span>
+            <li class="<%= currentPath === '/experience' ? 'active' : '' %>">
+                <a href="/experience">
+                    <span class="pcoded-micon"><i class="ti-briefcase"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Experience</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
-            <li>
-                <a href="form-elements-component.html">
+            <li class="<%= currentPath === '/education' ? 'active' : '' %>">
+                <a href="/education">
+                    <span class="pcoded-micon"><i class="ti-book"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Education</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+            <li class="<%= currentPath === '/certificate' ? 'active' : '' %>">
+                <a href="/certificate">
                     <span class="pcoded-micon"><i class="ti-folder"></i><b>FC</b></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Interest</span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Certificate</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>

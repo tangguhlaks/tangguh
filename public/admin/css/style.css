@@ -14342,3 +14342,10 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
     border-top: 1px solid #ccc; /* warna abu-abu */
     margin: 15px 0;
 }
+
+.table td:nth-child(6) {
+  max-width: 300px;       /* batasi lebar */
+  white-space: normal;    /* izinkan teks turun */
+  word-wrap: break-word;  /* kalau ada kata panjang, dipotong */
+  word-break: break-word; /* biar tetap rapi */
+}

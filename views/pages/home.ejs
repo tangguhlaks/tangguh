@@ -10,20 +10,21 @@
         <!-- Text Content -->
         <div class="col-lg-6 text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
             <p class="letter-space text-primary fw-semibold fs-3" data-aos="fade-up" data-aos-duration="1000">
-                Hi, I’m Tangguh Laksana
+                Hi, I’m <%= config['full-name'] %>
             </p>
 
             <h2 class="banner-size fw-medium display-3 my-4" id="typing-text"></h2>
 
             <p data-aos="fade-up" data-aos-duration="1400">
-                With over 4 years of experience in .NET development, I specialize in crafting reliable and scalable software solutions. 
-                My passion lies in Artificial Intelligence and Computer Vision — building systems that empower machines to see, 
-                understand, and create meaningful impact in the real world.
+                <%- config['home-description'] %>
             </p>
-            <a href="/portfolio" class="btn btn-outline-primary mt-4 position-relative"
+           <a href="/files/cv.pdf" 
+                class="btn btn-outline-primary mt-4 position-relative"
+                download="Tangguh-CV.pdf"
                 data-aos="fade-up" data-aos-duration="1600">
                 Download CV
             </a>
+
             <a href="/portfolio" class="btn btn-outline-primary mt-4 position-relative pe-5"
                 data-aos="fade-up" data-aos-duration="1600">
                 view portfolio
@@ -36,3 +37,46 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="job-titles" value="<%= config['job-titles'] %>">
+<% pageScript = `
+<script>
+(function ($) {
+  "use strict";
+  const texts = $("#job-titles").val().split(',');
+
+  let index = 0;       // index teks
+  let charIndex = 0;   // index karakter
+  let currentText = "";
+  let isDeleting = false;
+  const typingSpeed = 120;   // kecepatan ngetik
+  const erasingSpeed = 80;   // kecepatan hapus
+  const delayBetween = 1500; // delay sebelum hapus
+
+  function typeEffect() {
+    const typingElement = document.getElementById("typing-text");
+
+    if (isDeleting) {
+      currentText = texts[index].substring(0, charIndex--);
+    } else {
+      currentText = texts[index].substring(0, charIndex++);
+    }
+
+    typingElement.textContent = currentText;
+
+    if (!isDeleting && charIndex === texts[index].length) {
+      // tunggu sebentar lalu hapus
+      setTimeout(() => isDeleting = true, delayBetween);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length; // lanjut ke teks berikutnya
+    }
+
+    setTimeout(typeEffect, isDeleting ? erasingSpeed : typingSpeed);
+  }
+
+  // mulai animasi setelah halaman load
+  document.addEventListener("DOMContentLoaded", typeEffect);
+})(jQuery);
+</script>
+` %>
+
